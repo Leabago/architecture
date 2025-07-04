@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "grpc/proto/user";
+package user;
+
+message User {
+    string username = 1;
+    string email = 2;
+}
+
+service UserService {
+    // Unary RPC (1 request → 1 response)
+    rpc UanryCall(User) returns (User);
+    // Server streaming RPC (1 request → multiple responses)
+    rpc ServerStreammingCall(User) returns (stream User);
+    // Client streaming RPC (multiple requests → 1 response)
+    rpc ClientStreamingCall(stream User) returns (User);
+    // Bidirectional streaming RPC (multiple requests ↔ multiple responses)
+    rpc BidirectionalStreaming(stream User) returns (stream User);
+}

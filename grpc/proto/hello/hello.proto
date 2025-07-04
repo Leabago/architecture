@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package="grpc/protobuf/hello";
+package hello;
+
+message Hello {
+    string name = 1;
+}
+
+message MessageRequest {
+    string name = 1;
+}
+
+message MessageResponse {
+    string message = 1;
+}
+
+ 
+service Greetings {
+    rpc sayHello(MessageRequest) returns (MessageResponse) {}
+}
