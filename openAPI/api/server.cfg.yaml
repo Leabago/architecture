@@ -1,0 +1,6 @@
+# yaml-language-server: ...
+package: api
+generate:
+  gin-server: true
+  embedded-spec: true
+output: petstore-server.gen.go
